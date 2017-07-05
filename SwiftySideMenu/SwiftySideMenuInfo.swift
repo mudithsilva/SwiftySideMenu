@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-open class SwiftySideMenuInfo {
+public class SwiftySideMenuInfo {
     
-    open static let shared = SwiftySideMenuInfo()
+    public static let shared = SwiftySideMenuInfo()
     
     private init() { }
     
     
-    open var swiftySideMenu : SwiftySideMenuViewController!
+    public var swiftySideMenu : SwiftySideMenuViewController!
 }
