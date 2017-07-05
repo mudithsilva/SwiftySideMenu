@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="SwiftySideMenuImageView" id="iN0-l3-epB" customClass="SwiftySideMenuImageView" customModule="SwiftySideMenu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="101" height="88"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="63g-HN-GAL">
+                    <rect key="frame" x="0.0" y="0.0" width="101" height="88"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGJ-zR-jdB">
+                    <rect key="frame" x="0.0" y="0.0" width="101" height="88"/>
+                    <connections>
+                        <action selector="openMenu:" destination="iN0-l3-epB" eventType="touchUpInside" id="WzD-9S-xfm"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="63g-HN-GAL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6iB-T7-ZnA"/>
+                <constraint firstAttribute="bottom" secondItem="63g-HN-GAL" secondAttribute="bottom" id="9ik-fI-XIe"/>
+                <constraint firstItem="63g-HN-GAL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JVm-gj-SXq"/>
+                <constraint firstAttribute="trailing" secondItem="63g-HN-GAL" secondAttribute="trailing" id="LMA-yy-ePE"/>
+                <constraint firstAttribute="bottom" secondItem="pGJ-zR-jdB" secondAttribute="bottom" id="Mgk-qT-lKh"/>
+                <constraint firstItem="pGJ-zR-jdB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OEI-17-75a"/>
+                <constraint firstItem="pGJ-zR-jdB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qKa-YH-P85"/>
+                <constraint firstAttribute="trailing" secondItem="pGJ-zR-jdB" secondAttribute="trailing" id="rAm-dD-IOO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="menuButtonImage" destination="63g-HN-GAL" id="zkg-8V-7Bq"/>
+            </connections>
+            <point key="canvasLocation" x="-110.5" y="-237"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="menuButton.png" width="128" height="128"/>
+    </resources>
+</document>
