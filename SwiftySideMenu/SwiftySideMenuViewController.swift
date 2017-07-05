@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class SwiftySideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+open class SwiftySideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     weak open var dataSource:SwiftySideMenuDataSource?
     
@@ -39,7 +39,7 @@ public class SwiftySideMenuViewController: UIViewController, UITableViewDataSour
     private var selectedIndexPathRow: Int = 0
     
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         self.loadDismissView()
         self.loadSideView()
@@ -49,7 +49,7 @@ public class SwiftySideMenuViewController: UIViewController, UITableViewDataSour
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         self.childVC = self.dataSource!.menuNavigationTabs(self.navigationTableView)
         let controller = storyboard!.instantiateViewController(withIdentifier: (self.childVC.first?.viewControllerIdentifier!)!)
         addChildViewController(controller)
@@ -67,7 +67,7 @@ public class SwiftySideMenuViewController: UIViewController, UITableViewDataSour
         self.changeTableViewAttributes()
     }
     
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
