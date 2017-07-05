@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@objc protocol SwiftySideMenuDataSource: NSObjectProtocol {
+@objc public protocol SwiftySideMenuDataSource: NSObjectProtocol {
     
     @objc func menuNavigationTabs(_ tableView: UITableView) -> [SwiftySideMenuChildViewControllers]
     

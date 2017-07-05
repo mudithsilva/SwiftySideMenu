@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct SwiftySideMenuHelper {
+public struct SwiftySideMenuHelper {
     
     //static let menuWidth:CGFloat = 0.8
     static let percentThreshold:CGFloat = 0.5

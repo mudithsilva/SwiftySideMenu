@@ -8,12 +8,12 @@
 
 import UIKit
 
-class SwiftySideMenuTopBannerSampleOne: UIView {
+public class SwiftySideMenuTopBannerSampleOne: UIView {
     
     @IBOutlet weak var topBannerImage: UIImageView!
     
     
-    class func getTopBannerView() -> SwiftySideMenuTopBannerSampleOne {
+    public class func getTopBannerView() -> SwiftySideMenuTopBannerSampleOne {
         return UINib(nibName: "SwiftySideMenuTopBannerSampleOne", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuTopBannerSampleOne
     }
     

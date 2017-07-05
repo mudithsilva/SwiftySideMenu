@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SwiftySideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+public class SwiftySideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     weak open var dataSource:SwiftySideMenuDataSource?
     
@@ -39,7 +39,7 @@ class SwiftySideMenuViewController: UIViewController, UITableViewDataSource, UIT
     private var selectedIndexPathRow: Int = 0
     
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         self.loadDismissView()
         self.loadSideView()
@@ -49,7 +49,7 @@ class SwiftySideMenuViewController: UIViewController, UITableViewDataSource, UIT
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         self.childVC = self.dataSource!.menuNavigationTabs(self.navigationTableView)
         let controller = storyboard!.instantiateViewController(withIdentifier: (self.childVC.first?.viewControllerIdentifier!)!)
         addChildViewController(controller)
@@ -67,7 +67,7 @@ class SwiftySideMenuViewController: UIViewController, UITableViewDataSource, UIT
         self.changeTableViewAttributes()
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -259,11 +259,11 @@ class SwiftySideMenuViewController: UIViewController, UITableViewDataSource, UIT
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.childVC.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SwiftySideMenuTableViewCell", for: indexPath) as! SwiftySideMenuTableViewCell
         cell.tabName.text =  self.childVC[indexPath.row].tabName
         cell.tabIcon.image = UIImage(named: self.childVC[indexPath.row].tabIconName!)
@@ -290,7 +290,7 @@ class SwiftySideMenuViewController: UIViewController, UITableViewDataSource, UIT
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if (self.dataSource?.responds(to: #selector(self.dataSource?.menuNavigationTabs(_:heightForRowAt:))))! {
             return (self.dataSource?.menuNavigationTabs!(self.navigationTableView, heightForRowAt: indexPath))!
@@ -300,7 +300,7 @@ class SwiftySideMenuViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if selectedIndexPathRow != indexPath.row {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SwiftySideMenuChildViewControllers: NSObject {
+public class SwiftySideMenuChildViewControllers: NSObject {
     
     var tabName: String?
     var tabIconName: String? = ""

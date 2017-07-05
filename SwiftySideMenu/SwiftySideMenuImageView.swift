@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SwiftySideMenuImageView: UIView {
+public class SwiftySideMenuImageView: UIView {
     
     @IBOutlet weak var menuButtonImage: UIImageView!
     @IBAction func openMenu(_ sender: UIButton) {
