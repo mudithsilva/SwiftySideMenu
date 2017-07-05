@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class SwiftySideMenuInfo {
+open class SwiftySideMenuInfo {
     
     static let shared = SwiftySideMenuInfo()
     
