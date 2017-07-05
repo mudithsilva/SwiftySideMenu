@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = "This is a felxible side menu controller. You can do all the customization for the menu bar tableview and also add your own menu image."
 
-  s.homepage     = "http://EXAMPLE/SwiftySideMenu"
+  s.homepage     = "https://github.com/mudithsilva/SwiftySideMenu"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -62,8 +62,8 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
-  # s.platform     = :ios, "9.0"
+  s.platform     = :ios
+  s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/SwiftySideMenu.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/mudithsilva/SwiftySideMenu.git", :tag => "1.0.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
