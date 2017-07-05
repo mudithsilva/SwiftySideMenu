@@ -105,7 +105,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "images/*.png", "classes/SwiftySideMenuTableViewCell.xib"
+  s.resources = "SwiftySideMenu/*.png", "SwiftySideMenu/*.xib"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
