@@ -11,10 +11,10 @@ import UIKit
 
 open class SwiftySideMenuInfo {
     
-    static let shared = SwiftySideMenuInfo()
+    open static let shared = SwiftySideMenuInfo()
     
     private init() { }
     
     
-    var swiftySideMenu : SwiftySideMenuViewController!
+    open var swiftySideMenu : SwiftySideMenuViewController!
 }
