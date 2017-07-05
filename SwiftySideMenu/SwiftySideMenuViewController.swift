@@ -165,8 +165,22 @@ open class SwiftySideMenuViewController: UIViewController, UITableViewDataSource
             sideViewBottomView.bottomAnchor.constraint(equalTo: self.sideView.bottomAnchor, constant: 0),
             ])
         
+        
         navigationTableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width * 8/10, height: self.view.frame.size.height * 7/10))
-        navigationTableView.register(UINib(nibName: "SwiftySideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SwiftySideMenuTableViewCell")
+//        navigationTableView.register(UINib(nibName: "SwiftySideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SwiftySideMenuTableViewCell")
+        
+        let podBundle = Bundle(for: self.classForCoder)
+        if let bundleURL = podBundle.url(forResource: "SwiftySideMenu", withExtension: "bundle") {
+            if let bundle = Bundle(url: bundleURL) {
+                let cellNib = UINib(nibName: "SwiftySideMenuTableViewCell", bundle: bundle)
+                navigationTableView.register(cellNib, forCellReuseIdentifier: "SwiftySideMenuTableViewCell")
+            } else {
+                assertionFailure("Could not load the bundle")
+            }
+        } else {
+            assertionFailure("Could not create a path to the bundle")
+        }
+        
         navigationTableView.dataSource = self
         navigationTableView.delegate = self
         self.sideViewBottomView.addSubview(navigationTableView)

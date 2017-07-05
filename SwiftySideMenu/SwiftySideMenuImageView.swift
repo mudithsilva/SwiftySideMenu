@@ -16,13 +16,43 @@ public class SwiftySideMenuImageView: UIView {
     }
     
     class func getMenuImageView() -> SwiftySideMenuImageView {
-        return UINib(nibName: "SwiftySideMenuImageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
+        
+        let podBundle = Bundle(for: self.classForCoder())
+        if let bundleURL = podBundle.url(forResource: "SwiftySideMenu", withExtension: "bundle") {
+            if let bundle = Bundle(url: bundleURL) {
+                 return UINib(nibName: "SwiftySideMenuImageView", bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
+            } else {
+                return UINib(nibName: "SwiftySideMenuImageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
+            }
+        } else {
+            return UINib(nibName: "SwiftySideMenuImageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
+        }
+        
+//        return UINib(nibName: "SwiftySideMenuImageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
     }
     
     class func addMenuImageView(addMenuViewTo parentView: UIView) {
-        let childView = UINib(nibName: "SwiftySideMenuImageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
-        childView.frame = parentView.bounds
-        parentView.addSubview(childView)
+        
+        let podBundle = Bundle(for: self.classForCoder())
+        if let bundleURL = podBundle.url(forResource: "SwiftySideMenu", withExtension: "bundle") {
+            if let bundle = Bundle(url: bundleURL) {
+                let childView = UINib(nibName: "SwiftySideMenuImageView", bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
+                childView.frame = parentView.bounds
+                parentView.addSubview(childView)
+            } else {
+                let childView = UINib(nibName: "SwiftySideMenuImageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
+                childView.frame = parentView.bounds
+                parentView.addSubview(childView)
+            }
+        } else {
+            let childView = UINib(nibName: "SwiftySideMenuImageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
+            childView.frame = parentView.bounds
+            parentView.addSubview(childView)
+        }
+        
+//        let childView = UINib(nibName: "SwiftySideMenuImageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
+//        childView.frame = parentView.bounds
+//        parentView.addSubview(childView)
     }
     /*
      // Only override draw() if you perform custom drawing.

@@ -14,7 +14,19 @@ public class SwiftySideMenuTopBannerSampleOne: UIView {
     
     
     public class func getTopBannerView() -> SwiftySideMenuTopBannerSampleOne {
-        return UINib(nibName: "SwiftySideMenuTopBannerSampleOne", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuTopBannerSampleOne
+        
+        let podBundle = Bundle(for: self.classForCoder())
+        if let bundleURL = podBundle.url(forResource: "SwiftySideMenu", withExtension: "bundle") {
+            if let bundle = Bundle(url: bundleURL) {
+                return UINib(nibName: "SwiftySideMenuTopBannerSampleOne", bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuTopBannerSampleOne
+            } else {
+                return UINib(nibName: "SwiftySideMenuTopBannerSampleOne", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuTopBannerSampleOne
+            }
+        } else {
+            return UINib(nibName: "SwiftySideMenuTopBannerSampleOne", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuTopBannerSampleOne
+        }
+        
+//        return UINib(nibName: "SwiftySideMenuTopBannerSampleOne", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuTopBannerSampleOne
     }
     
     /*
