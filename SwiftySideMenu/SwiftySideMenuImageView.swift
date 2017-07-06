@@ -17,7 +17,7 @@ public class SwiftySideMenuImageView: UIView {
     
     class func getMenuImageView() -> SwiftySideMenuImageView {
         
-        let podBundle = Bundle(for: self.classForCoder())
+        let podBundle = Bundle(for: SwiftySideMenuImageView.self)
         if let bundleURL = podBundle.url(forResource: "SwiftySideMenu", withExtension: "bundle") {
             if let bundle = Bundle(url: bundleURL) {
                  return UINib(nibName: "SwiftySideMenuImageView", bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
@@ -33,7 +33,7 @@ public class SwiftySideMenuImageView: UIView {
     
     class func addMenuImageView(addMenuViewTo parentView: UIView) {
         
-        let podBundle = Bundle(for: self.classForCoder())
+        let podBundle = Bundle(for: SwiftySideMenuImageView.self)
         if let bundleURL = podBundle.url(forResource: "SwiftySideMenu", withExtension: "bundle") {
             if let bundle = Bundle(url: bundleURL) {
                 let childView = UINib(nibName: "SwiftySideMenuImageView", bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView

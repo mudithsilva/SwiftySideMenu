@@ -169,7 +169,7 @@ open class SwiftySideMenuViewController: UIViewController, UITableViewDataSource
         navigationTableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width * 8/10, height: self.view.frame.size.height * 7/10))
 //        navigationTableView.register(UINib(nibName: "SwiftySideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SwiftySideMenuTableViewCell")
         
-        let podBundle = Bundle(for: self.classForCoder)
+        let podBundle = Bundle(for: SwiftySideMenuViewController.self)
         if let bundleURL = podBundle.url(forResource: "SwiftySideMenu", withExtension: "bundle") {
             if let bundle = Bundle(url: bundleURL) {
                 let cellNib = UINib(nibName: "SwiftySideMenuTableViewCell", bundle: bundle)

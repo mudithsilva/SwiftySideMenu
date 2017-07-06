@@ -108,7 +108,8 @@ Pod::Spec.new do |s|
   s.resources = "SwiftySideMenu/*.png", "SwiftySideMenu/*.xib"
   s.resource_bundles = {
     'SwiftySideMenu' => [
-        'Pod/**/*.xib'
+        'Pod/**/*.xib',
+        'Pod/**/*.png'
     ]
   }
 

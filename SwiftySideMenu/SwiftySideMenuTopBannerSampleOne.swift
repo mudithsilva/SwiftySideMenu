@@ -15,7 +15,7 @@ public class SwiftySideMenuTopBannerSampleOne: UIView {
     
     public class func getTopBannerView() -> SwiftySideMenuTopBannerSampleOne {
         
-        let podBundle = Bundle(for: self.classForCoder())
+        let podBundle = Bundle(for: SwiftySideMenuTopBannerSampleOne.self)
         if let bundleURL = podBundle.url(forResource: "SwiftySideMenu", withExtension: "bundle") {
             if let bundle = Bundle(url: bundleURL) {
                 return UINib(nibName: "SwiftySideMenuTopBannerSampleOne", bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuTopBannerSampleOne
