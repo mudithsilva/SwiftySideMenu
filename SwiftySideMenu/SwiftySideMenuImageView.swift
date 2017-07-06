@@ -15,7 +15,14 @@ public class SwiftySideMenuImageView: UIView {
         SwiftySideMenuInfo.shared.swiftySideMenu.menuButtonClicked()
     }
     
-    class func getMenuImageView() -> SwiftySideMenuImageView {
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        let podBundle = Bundle(for: SwiftySideMenuImageView.self)
+        self.menuButtonImage.image = UIImage(named: "menuButton", in: podBundle, compatibleWith: nil)
+        self.backgroundColor = UIColor.clear
+    }
+    
+    public class func getMenuImageView() -> SwiftySideMenuImageView {
         
         let podBundle = Bundle(for: SwiftySideMenuImageView.self)
         if let bundleURL = podBundle.url(forResource: "SwiftySideMenu", withExtension: "bundle") {
@@ -31,7 +38,7 @@ public class SwiftySideMenuImageView: UIView {
 //        return UINib(nibName: "SwiftySideMenuImageView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SwiftySideMenuImageView
     }
     
-    class func addMenuImageView(addMenuViewTo parentView: UIView) {
+    public class func addMenuImageView(addMenuViewTo parentView: UIView) {
         
         let podBundle = Bundle(for: SwiftySideMenuImageView.self)
         if let bundleURL = podBundle.url(forResource: "SwiftySideMenu", withExtension: "bundle") {

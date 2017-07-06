@@ -201,7 +201,9 @@ open class SwiftySideMenuViewController: UIViewController, UITableViewDataSource
         
         let menueButton = UIButton()
         menueButton.backgroundColor = UIColor.clear
-        menueButton.setBackgroundImage(UIImage(named: "dismissViewOverlay"), for: UIControlState.normal)
+        let podBundle = Bundle(for: SwiftySideMenuImageView.self)
+        menueButton.setBackgroundImage(UIImage(named: "dismissViewOverlay", in: podBundle, compatibleWith: nil), for: UIControlState.normal)
+//        menueButton.setBackgroundImage(UIImage(named: "dismissViewOverlay"), for: UIControlState.normal)
         menueButton.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         menueButton.addTarget(self, action:#selector(self.menuClose), for: .touchUpInside)
         self.dismissView.addSubview(menueButton)
@@ -291,7 +293,9 @@ open class SwiftySideMenuViewController: UIViewController, UITableViewDataSource
             UIView.animate(withDuration: 0.3) {
                 cell.tabName.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
                 cell.tabIcon.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-                cell.backgroundView = UIImageView(image: UIImage(named: "dismissViewOverlay"))
+//                cell.backgroundView = UIImageView(image: UIImage(named: "dismissViewOverlay"))
+                let podBundle = Bundle(for: SwiftySideMenuImageView.self)
+                cell.backgroundView = UIImageView(image: UIImage(named: "dismissViewOverlay", in: podBundle, compatibleWith: nil))
             }
         } else {
             UIView.animate(withDuration: 0.3) {
