@@ -50,3 +50,7 @@ Then, run the following command:
 $ pod install
 ```
 
+## Usage
+
+### SwiftySideMenu Configuration
+
