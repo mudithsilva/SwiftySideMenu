@@ -32,7 +32,7 @@ This is a fully customizable side menu controller written in Swift.
 
 ## Installation
 
-To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate SwiftySideMenu into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
