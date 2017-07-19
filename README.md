@@ -22,3 +22,9 @@ This is a fully customizable side menu controller written in Swift.
 - iOS 8.0+
 - Xcode 8.0+
 - Swift 3.0, 3.1, 3.2, and 4.0
+
+## Communication
+
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
