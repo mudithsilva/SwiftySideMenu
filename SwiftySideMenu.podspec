@@ -106,12 +106,12 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   s.resources = "SwiftySideMenu/*.png", "SwiftySideMenu/*.xib"
-  s.resource_bundles = {
-    'SwiftySideMenu' => [
-        'Pod/**/*.xib',
-        'Pod/**/*.png'
-   ]
-  }
+  # s.resource_bundles = {
+  #   'SwiftySideMenu' => [
+  #       'Pod/**/*.xib',
+  #       'Pod/**/*.png'
+  #  ]
+  # }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
